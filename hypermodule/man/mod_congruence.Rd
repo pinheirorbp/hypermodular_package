@@ -4,7 +4,7 @@
 \alias{mod_congruence}
 \title{Calculates module congruence metrics}
 \usage{
-mod_congruence(hmod_ab = NULL, hmod_bc = NULL)
+mod_congruence(hmod_ab, hmod_bc)
 }
 \arguments{
 \item{hmod_ab}{A vector of hypermodule labels for the connector species of
@@ -16,15 +16,15 @@ bipartite network (B-C).}
 \value{
 A named numeric vector containing three measures:
 \itemize{
-\item \code{baseline}: expected congruence based on marginal proportions of hymodule
-labels.
+\item \code{baseline}: expected congruence based on marginal proportions
+of hypermodule labels.
 \item \code{realized}: observed proportion of matching labels.
 \item \code{adjusted}: realized congruence minus baseline congruence.
 }
 }
 \description{
 Calculates baseline, realized and adjusted congruence between the module
-labels of Bipartite Networks (A-B) and (B-C) (according to Pinheiro et all.
+labels of Bipartite Networks (A-B) and (B-C) (according to Pinheiro et al.
 2026).
 }
 \details{
@@ -32,7 +32,7 @@ Baseline congruence is calculated by multiplying the relative sizes of each
 module across BNs and adding across all modules.
 
 Realized congruence is calculated as the proportion of connector species
-attributed to the same hypermodule in both BNs, i.e. the proportion of
+attributed to the same hypermodule in both BNs, i.e., the proportion of
 matching hypermodule labels.
 
 Adjusted congruence is the difference between realized and baseline
@@ -44,7 +44,7 @@ hmod_bc <- c("hmod1", "hmod1", "hmod2", "hmod1", "hmod2", "hmod3")
 
 congr <- mod_congruence(hmod_ab, hmod_bc)
 
-congr$baseline
+congr["baseline"]
 
 }
 \references{

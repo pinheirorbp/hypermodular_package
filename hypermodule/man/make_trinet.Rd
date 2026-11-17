@@ -4,7 +4,15 @@
 \alias{make_trinet}
 \title{Constructs an object of type "trinet"}
 \usage{
-make_trinet(bn_ab, bn_bc, mod_ab_a, mod_ab_b, mod_bc_b, mod_bc_c)
+make_trinet(
+  bn_ab,
+  bn_bc,
+  mod_ab_a,
+  mod_ab_b,
+  mod_bc_b,
+  mod_bc_c,
+  report = TRUE
+)
 }
 \arguments{
 \item{bn_ab}{A matrix (binary or weighted) representing the bipartite network
@@ -15,25 +23,20 @@ The connector node set (node set B) must be represented by the rows.}
 (B-C).
 The connector node set (node set B) must be represented by the rows.}
 
-\item{mod_ab_a}{A vector of module labels for the species on the node set A
-of bipartite network A-B.
-Values of modules that include at least one connector species must match
-the row names of \code{mod_corresp}.}
+\item{mod_ab_a}{A vector of module labels for the species in the node set A
+of bipartite network A-B.}
 
-\item{mod_ab_b}{A vector of module labels for the species on the node set B
-(connector node set) of bipartite network A-B.
-Values of modules that include at least one connector species must match
-the row names of \code{mod_corresp}.}
+\item{mod_ab_b}{A vector of module labels for the species in the node set B
+(connector node set) of bipartite network A-B.}
 
-\item{mod_bc_b}{A vector of module labels for the species on the node set B
-(connector node set) of bipartite network B-C.
-Values of modules that include at least one connector species must match
-the column names of \code{mod_corresp}.}
+\item{mod_bc_b}{A vector of module labels for the species in the node set B
+(connector node set) of bipartite network B-C.}
 
-\item{mod_bc_c}{A vector of module labels for the species on the node set C
-of bipartite network B-C.
-Values of modules that include at least one connector species must match
-the column names of \code{mod_corresp}.}
+\item{mod_bc_c}{A vector of module labels for the species in the node set C
+of bipartite network B-C.}
+
+\item{report}{A Boolean that determines whether a report of the data will
+be shown. Defaults to \code{TRUE}.}
 }
 \value{
 A trinet object, which is a named list containing:
@@ -50,11 +53,15 @@ labels of the shared connector species.
 }
 \description{
 Combines two Bipartite Networks (A-B) and (B-C) matrices with their
-respective modules into a standardized \code{"trinet"} S3 object.
+respective modules into a standardized \code{"trinet"} S3 object
+to be used by the other functions of the \code{hypermodule} package.
 }
 \details{
-\emph{DESCRIPTION}
+Module labels can be of any type (they are converted to character and
+prefixed). If a label vector is named, names must match the species names
+(order is then irrelevant); if it is unnamed, it must have one label per
+species, in the order of the rows/columns of the corresponding matrix.
 
-For mod_ab and mod_bc fragment just like hyper_q code (e.g. mod_ab:
-mod_ab_a, mod_ab_b)
+Module arguments follow the pattern \verb{mod_<network>_<node set>}; for example,
+\code{mod_ab_a} holds the module labels of node set A in bipartite network (A-B).
 }

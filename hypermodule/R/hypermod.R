@@ -1,40 +1,52 @@
-#' Optimize hypermodular structure via simulated annealing
+#' Identifies hypermodules in tripartite networks using the HyperMod algorithm
 #'
-#' *INSERT DESCRIPTION!!!*
+#' Hypermodules are cohesive groups of species emerging from congruent modules
+#' across two interconnected bipartite networks. HyperMod uses simulated
+#' annealing to find the correspondence between modules in the two bipartite
+#' networks that maximizes the adjusted congruence. For a full description of
+#' the algorithm, see Pinheiro et al. (2026).
 #'
-#' @param x A trinet object.
-#' @param lambda Numeric scalar between 0 and 1 giving the cooling rate applied
-#'  to the temperature at each iteration. Defaults to `0.9995`.
+#' Generates a `hypermod_results` object that can be used in the null model
+#' and plots of the `hypermodule` package.
+#'
+#' @param x A trinet object made by the `make_trinet()` function.
+#' @param lambda Numeric scalar between 0 and 1 giving the cooling factor by
+#'  which the temperature is multiplied at each iteration. Defaults to `0.9995`.
 #' @param temp Numeric scalar corresponding to the initial temperature.
 #'  Defaults to `4`.
-#' @param max_steps Integer determining the maximum number of iterations to the
+#' @param max_steps Integer determining the maximum number of iterations of the
 #'  simulated annealing. Defaults to `50000`.
 #' @param steps_stop Integer determining the maximum number of consecutive
 #'  iterations without strict improvement in the target metric.
 #'  Defaults to `5000`.
-#' @param metric String value corresponding to the optimized metric. Values can
-#'  be 'adjusted' or 'hypermodularity'.
-#'  Defaults to `adjusted`.
+#' @param report A Boolean that determines whether a report of the data will
+#'   be shown. Defaults to `TRUE`.
 #'
-#' @return A named list containing:
-#'  * `final`: final congruence values for baseline, realized and adjusted
-#'  * `metrics`: a matrix that keeps track of all correspondence values
-#'    until the algorithm ends.
+#' @return A hypermod_results object, which is a named list containing:
+#'  * `final`: final congruence values for baseline, realized and adjusted.
+#'  * `metrics`: a matrix that keeps track of all congruence values until the
+#'    algorithm ends.
+#'  * `hyper_q`: a named numeric vector with the hypermodularity of the final
+#'    module correspondence (`hyper_q`, `hyper_q_ab` and `hyper_q_bc`; see
+#'    [hyper_q()]).
 #'  * `mod_corresp`: the final module correspondence matrix.
+#'  * `trinet`: the same trinet object input.
+#'  * `parameters`: named list with the parameter applied in the analysis.
+#'
+#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. [https://doi.org/10.1098/rspb.2026.1348](https://doi.org/10.1098/rspb.2026.1348)
 #'
 #' @export
-hypermodule <- function(x = NULL,
+hypermod <- function(x,
                      lambda = 0.9995,
                      temp = 4,
                      max_steps = 50000,
                      steps_stop = 5000,
-                     metric = "adjusted"
+                     report = TRUE
 ) {
   if (!inherits(x, "trinet")) {
-    stop("This is no trinet object! Please use the
-         function make_trinet to create one.",
-         call. = FALSE
-    )
+    stop("This is no trinet object! ",
+         "Please use the function make_trinet to create one.",
+         call. = FALSE)
   }
 
   # initializes module correspondence matrix
@@ -44,12 +56,11 @@ hypermodule <- function(x = NULL,
   hmod_ab <- mod2hmod(mod = x$connector$ab,
                       mod_corresp = current_corresp)
   hmod_bc <- mod2hmod(mod = x$connector$bc,
-                      side = "col",
-                      mod_corresp = current_corresp)
-  current_congruence <- unlist(mod_congruence(hmod_ab = hmod_ab,
-                                              hmod_bc = hmod_bc))
+                      mod_corresp = current_corresp,
+                      side = "col")
+  current_congruence <- mod_congruence(hmod_ab = hmod_ab,
+                                       hmod_bc = hmod_bc)
 
-  # add 'hypermodularity' column for further optimization
   metrics <- matrix(NA_real_,
                     nrow = max_steps,
                     ncol = 3,
@@ -71,17 +82,16 @@ hypermodule <- function(x = NULL,
                         mod_corresp = tmp_corresp)
 
     hmod_bc <- mod2hmod(mod = x$connector$bc,
-                        side = "col",
-                        mod_corresp = tmp_corresp)
+                        mod_corresp = tmp_corresp,
+                        side = "col")
 
-    tmp_congruence <- unlist(mod_congruence(hmod_ab = hmod_ab,
-                                            hmod_bc = hmod_bc))
-
+    tmp_congruence <- mod_congruence(hmod_ab = hmod_ab,
+                                     hmod_bc = hmod_bc)
     # metric to be optimized
-    tmp_score <- tmp_congruence[[metric]]
+    tmp_adjusted <- tmp_congruence[["adjusted"]]
 
     # determining either acceptance or rejection
-    change <- tmp_score - metrics[iteration - 1, metric]
+    change <- tmp_adjusted - metrics[iteration - 1, "adjusted"]
 
     if (change > 0) {
       last_change <- iteration
@@ -112,17 +122,40 @@ hypermodule <- function(x = NULL,
   # trim unused pre-allocated rows if stopped before it hit max_steps
   metrics <- metrics[seq_len(iteration - 1), , drop = FALSE]
 
-  message("Final congruence: \n", metrics[nrow(metrics), ], "\n")
+  # calculate hypermodularity
+  hq <- hyper_q(x = x, mod_corresp = current_corresp)
 
-  list(
-    final = metrics[nrow(metrics), ],
-    metrics = metrics,
-    mod_corresp = current_corresp
-  )
+
+  if (report) {
+    message("------ Final congruence ------ \n",
+            "baseline: ", round(metrics[nrow(metrics), 1], digits = 3), "\n",
+            "realized: ", round(metrics[nrow(metrics), 2], digits = 3), "\n",
+            "adjusted: ", round(metrics[nrow(metrics), 3], digits = 3), "\n",
+            " -------------------- \n",
+            "Iterations: ", nrow(metrics) - 1, "\n",
+            "Number of hypermodules: ", length(unique(as.numeric(current_corresp)[as.numeric(current_corresp) > 0])),
+            " -------------------- \n",
+            "Overall hyperQ: ", round(hq["hyper_q"], digits = 3), "\n",
+            "Component hyperQ for (A-B): ", round(hq["hyper_q_ab"], digits = 3), "\n",
+            "Component hyperQ for (B-C): ", round(hq["hyper_q_bc"], digits = 3), "\n")
+  }
+
+  out <- list(final = metrics[nrow(metrics), ],
+              metrics = metrics,
+              hyper_q = hp,
+              mod_corresp = current_corresp,
+              trinet = x,
+              parameters = list(lambda = lambda,
+                                temp = temp,
+                                max_steps = max_steps,
+                                steps_stop = steps_stop))
+  class(out) <- "hypermod_results"
+  out
 }
 
 
 
+#' Initializes a module correspondence matrix
 #' @noRd
 .init_mod_corresp <- function(x
 ) {
@@ -154,6 +187,7 @@ hypermodule <- function(x = NULL,
 
 
 
+#' Connects empty rows to existing hypermodules
 #' @noRd
 .connect_empty_row <- function(corresp,
                                empty_rows,
@@ -183,6 +217,8 @@ hypermodule <- function(x = NULL,
 
 
 
+#' Performs disturbance in module correspondence matrix by disconnecting and
+#' connecting rows or columns
 #' @noRd
 .disturb_corresp <- function(corresp
 ) {

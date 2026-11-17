@@ -4,15 +4,15 @@
 #' using a correspondence matrix (modules x hypermodules).
 #'
 #' @param mod A vector of module labels for species of a node set.
-#'  Values must match the row or the col names of `mod_corresp`.
-#' @param side Indicates whether modules are represented by rows or columns in
-#'  the `mod_corresp`. Values must be "row" or "col".
+#'  Values must match the row or the column names of `mod_corresp`.
 #' @param mod_corresp A matrix describing the correspondence between modules in
 #'  bipartite networks (A-B) and (B-C). Rows represent BN (A-B) modules, columns
 #'  represent BN (B-C) modules, and positive values identify hypermodules.
+#' @param side Indicates whether modules are represented by rows or columns in
+#'  the `mod_corresp`. Values must be "row" or "col".
 #'
 #' @return A numeric vector `hmod`, which corresponds to hypermodule labels for
-#'  the species of the given node set,
+#'  the species of the given node set.
 #'
 #' @examples
 #' mod_corresp <- matrix(
@@ -32,12 +32,13 @@
 #' )
 #'
 #' @export
-mod2hmod <- function(mod = NULL,
-                     side = "row",
-                     mod_corresp = NULL
+mod2hmod <- function(mod,
+                     mod_corresp,
+                     side = c("row", "col")
 ) {
+  side <- match.arg(side)
 
-  if (!side%in%c("col", "row")) {
+  if (!side %in% c("col", "row")) {
     stop ("Typo! Side must be row or col",
           call. = FALSE)
   }

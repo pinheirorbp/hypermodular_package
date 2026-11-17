@@ -1,14 +1,14 @@
 #' Calculates module congruence metrics
 #'
 #' Calculates baseline, realized and adjusted congruence between the module
-#' labels of Bipartite Networks (A-B) and (B-C) (according to Pinheiro et all.
+#' labels of Bipartite Networks (A-B) and (B-C) (according to Pinheiro et al.
 #' 2026).
 #'
 #' Baseline congruence is calculated by multiplying the relative sizes of each
 #' module across BNs and adding across all modules.
 #'
 #' Realized congruence is calculated as the proportion of connector species
-#' attributed to the same hypermodule in both BNs, i.e. the proportion of
+#' attributed to the same hypermodule in both BNs, i.e., the proportion of
 #' matching hypermodule labels.
 #'
 #' Adjusted congruence is the difference between realized and baseline
@@ -20,8 +20,8 @@
 #'  bipartite network (B-C).
 #'
 #' @return A named numeric vector containing three measures:
-#'  * `baseline`: expected congruence based on marginal proportions of hymodule
-#'    labels.
+#'  * `baseline`: expected congruence based on marginal proportions
+#'    of hypermodule labels.
 #'  * `realized`: observed proportion of matching labels.
 #'  * `adjusted`: realized congruence minus baseline congruence.
 #'
@@ -33,11 +33,11 @@
 #'
 #' congr <- mod_congruence(hmod_ab, hmod_bc)
 #'
-#' congr$baseline
+#' congr["baseline"]
 #'
 #' @export
-mod_congruence <- function(hmod_ab = NULL,
-                           hmod_bc = NULL
+mod_congruence <- function(hmod_ab,
+                           hmod_bc
 ) {
   hmod_ab_labels <- sort(unique(hmod_ab))
   baseline <- sum(
@@ -54,9 +54,7 @@ mod_congruence <- function(hmod_ab = NULL,
 
   adjusted <- (realized - baseline)
 
-  list(
-    baseline = baseline,
+  c(baseline = baseline,
     realized = realized,
-    adjusted = adjusted
-  )
+    adjusted = adjusted)
 }

@@ -4,7 +4,7 @@
 \alias{hyper_q}
 \title{Calculates the hypermodularity index (hyperQ)}
 \usage{
-hyper_q(x = NULL, mod_corresp = NULL)
+hyper_q(x, mod_corresp)
 }
 \arguments{
 \item{x}{A trinet object.}
@@ -17,14 +17,14 @@ hypermodules.}
 \value{
 A named numeric vector containing three measures:
 \itemize{
-\item \code{hyper_q}: overall hypermodularity for the tripartite network (A-B-C)
-\item \code{hyper_q_ab}: component of hypermodularity for BN (A-B)
-\item \code{hyper_q_bc}: component of hypermodularity for BN (B-C)
+\item \code{hyper_q}: overall hypermodularity for the tripartite network (A-B-C).
+\item \code{hyper_q_ab}: component of hypermodularity for BN (A-B).
+\item \code{hyper_q_bc}: component of hypermodularity for BN (B-C).
 }
 }
 \description{
-Calculates the hypermodularity index proposed in Pinheiro et all. 2026 for a
-tripartite network
+Calculates the hypermodularity index proposed in Pinheiro et al. 2026 for a
+tripartite network.
 }
 \details{
 Analogous to the bipartite modularity index (Q), the hypermodularity index

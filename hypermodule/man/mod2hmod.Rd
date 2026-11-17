@@ -4,22 +4,22 @@
 \alias{mod2hmod}
 \title{Translates modules to hypermodules}
 \usage{
-mod2hmod(mod = NULL, side = "row", mod_corresp = NULL)
+mod2hmod(mod, mod_corresp, side = c("row", "col"))
 }
 \arguments{
 \item{mod}{A vector of module labels for species of a node set.
-Values must match the row or the col names of \code{mod_corresp}.}
-
-\item{side}{Indicates whether modules are represented by rows or columns in
-the \code{mod_corresp}. Values must be "row" or "col".}
+Values must match the row or the column names of \code{mod_corresp}.}
 
 \item{mod_corresp}{A matrix describing the correspondence between modules in
 bipartite networks (A-B) and (B-C). Rows represent BN (A-B) modules, columns
 represent BN (B-C) modules, and positive values identify hypermodules.}
+
+\item{side}{Indicates whether modules are represented by rows or columns in
+the \code{mod_corresp}. Values must be "row" or "col".}
 }
 \value{
 A numeric vector \code{hmod}, which corresponds to hypermodule labels for
-the species of the given node set,
+the species of the given node set.
 }
 \description{
 Assigns hypermodule labels for species of a node set

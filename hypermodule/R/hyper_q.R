@@ -1,7 +1,7 @@
 #' Calculates the hypermodularity index (hyperQ)
 #'
-#' Calculates the hypermodularity index proposed in Pinheiro et all. 2026 for a
-#' tripartite network
+#' Calculates the hypermodularity index proposed in Pinheiro et al. 2026 for a
+#' tripartite network.
 #'
 #' Analogous to the bipartite modularity index (Q), the hypermodularity index
 #' (hyperQ) measures the cohesion of tripartite hypermodules, increasing with
@@ -15,38 +15,37 @@
 #'  hypermodules.
 #'
 #' @return A named numeric vector containing three measures:
-#'  * `hyper_q`: overall hypermodularity for the tripartite network (A-B-C)
-#'  * `hyper_q_ab`: component of hypermodularity for BN (A-B)
-#'  * `hyper_q_bc`: component of hypermodularity for BN (B-C)
+#'  * `hyper_q`: overall hypermodularity for the tripartite network (A-B-C).
+#'  * `hyper_q_ab`: component of hypermodularity for BN (A-B).
+#'  * `hyper_q_bc`: component of hypermodularity for BN (B-C).
 #'
 #' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. [https://doi.org/10.1098/rspb.2026.1348](https://doi.org/10.1098/rspb.2026.1348)
 #'
 #' @export
-hyper_q <- function(x = NULL,
-                    mod_corresp= NULL
+hyper_q <- function(x,
+                    mod_corresp
 ) {
   if (!inherits(x, "trinet")) {
-    stop("This is no trinet object! Please use the
-         function make_trinet to create one.",
-         call. = FALSE
-    )
+    stop("This is no trinet object! ",
+         "Please use the function make_trinet to create one.",
+         call. = FALSE)
   }
 
   mod_ab_labels <- unique(x$connector$ab)
   mod_bc_labels <- unique(x$connector$bc)
 
-  if (any(sort(mod_ab_labels) != sort(rownames(mod_corresp))) || any(sort(mod_bc_labels) != sort(colnames(mod_corresp)))) {
-    stop(
-      "Each module that includes at least one connector species must",
-      "correspond to exactly one positive hypermodule label in mod_corresp.",
-      call. = FALSE)
+  if (!setequal(mod_ab_labels, rownames(mod_corresp)) ||
+      !setequal(mod_bc_labels, colnames(mod_corresp))) {
+    stop("Each module that includes at least one connector species must ",
+         "correspond to exactly one positive hypermodule label in mod_corresp.",
+         call. = FALSE)
   }
 
   keep_a <- x$mod_ab$cols %in% mod_ab_labels
-  keep_b <- x$mod_bc$cols %in% mod_bc_labels
+  keep_c <- x$mod_bc$cols %in% mod_bc_labels
 
   bn_ab <- x$bn_ab[names(x$connector$ab), keep_a, drop = FALSE]
-  bn_bc <- x$bn_bc[names(x$connector$bc), keep_b, drop = FALSE]
+  bn_bc <- x$bn_bc[names(x$connector$bc), keep_c, drop = FALSE]
 
   # hypermodules
   hmod_a <- mod2hmod(mod = x$mod_ab$cols[keep_a],
@@ -59,7 +58,7 @@ hyper_q <- function(x = NULL,
                         side = "col",
                         mod_corresp = mod_corresp)
 
-  hmod_c <- mod2hmod(mod = x$mod_bc$cols[keep_b],
+  hmod_c <- mod2hmod(mod = x$mod_bc$cols[keep_c],
                      side = "col",
                      mod_corresp = mod_corresp)
 
