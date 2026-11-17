@@ -1,0 +1,27 @@
+Type: Package
+Package: hypermodule
+Title: Tools for hypermodularity analysis in tripartite networks
+Version: 1.0.0
+Authors@R: c(
+    person("Rafael", "Pinheiro", , "rafael-bpp@hotmail.com", role = c("aut", "cre")),
+    person("Leticia", "Brito", , "leticia-sbrito@hotmail.com", role = "aut"),
+    person("Carsten", "Dormann", role = "aut"),
+    person("Guadalupe", "Peralta", role = "aut"),
+    person("Luciano", "Cagnolo", role = "aut"),
+    person("Thomas", "Lewinsohn", role = "aut")
+  )
+Description: Hypermodules are cohesive groups of species emerging from
+    congruent modules across two interconnected bipartite networks. This
+    package implements the HyperMod algorithm to detect hypermodules and
+    null models for comparisons. It also provides functions for plotting
+    tripartite networks with highlighted hypermodules.
+License: GPL (>= 3)
+Imports:
+    doSNOW,
+    foreach,
+    parallel,
+    stats
+Config/roxygen2/version: 8.1.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
