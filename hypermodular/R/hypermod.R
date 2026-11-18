@@ -142,7 +142,7 @@ hypermod <- function(x,
 
   out <- list(final = metrics[nrow(metrics), ],
               metrics = metrics,
-              hyper_q = hp,
+              hyper_q = hq,
               mod_corresp = current_corresp,
               trinet = x,
               parameters = list(lambda = lambda,
