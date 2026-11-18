@@ -1,4 +1,4 @@
-#' @name hypermodule-package
+#' @name hypermodular-package
 #' @keywords internal
 #'
 #' @section References:

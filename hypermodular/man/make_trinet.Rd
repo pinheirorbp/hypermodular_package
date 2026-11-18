@@ -54,7 +54,7 @@ labels of the shared connector species.
 \description{
 Combines two Bipartite Networks (A-B) and (B-C) matrices with their
 respective modules into a standardized \code{"trinet"} S3 object
-to be used by the other functions of the \code{hypermodule} package.
+to be used by the other functions of the \code{hypermodular} package.
 }
 \details{
 Module labels can be of any type (they are converted to character and

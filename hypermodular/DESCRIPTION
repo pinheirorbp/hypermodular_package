@@ -1,5 +1,5 @@
 Type: Package
-Package: hypermodule
+Package: hypermodular
 Title: Tools for hypermodularity analysis in tripartite networks
 Version: 1.0.0
 Authors@R: c(

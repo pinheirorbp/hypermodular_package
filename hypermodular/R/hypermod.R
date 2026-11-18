@@ -7,7 +7,7 @@
 #' the algorithm, see Pinheiro et al. (2026).
 #'
 #' Generates a `hypermod_results` object that can be used in the null model
-#' and plots of the `hypermodule` package.
+#' and plots of the `hypermodular` package.
 #'
 #' @param x A trinet object made by the `make_trinet()` function.
 #' @param lambda Numeric scalar between 0 and 1 giving the cooling factor by

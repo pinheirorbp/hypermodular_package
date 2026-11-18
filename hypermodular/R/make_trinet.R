@@ -2,7 +2,7 @@
 #'
 #' Combines two Bipartite Networks (A-B) and (B-C) matrices with their
 #' respective modules into a standardized `"trinet"` S3 object
-#' to be used by the other functions of the `hypermodule` package.
+#' to be used by the other functions of the `hypermodular` package.
 #'
 #' Module labels can be of any type (they are converted to character and
 #' prefixed). If a label vector is named, names must match the species names
