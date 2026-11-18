@@ -12,10 +12,10 @@ In your R console, install the `remotes` library from CRAN.
 install_packages("remotes")
 ```
 
-Then, install the `hypermodule` package.
+Then, install the `hypermodular` package.
 
 ```bash
-remotes::install_github("pinheirorbp/hypermodule_package/hypermodule")
+remotes::install_github("pinheirorbp/hypermodular_package/hypermodular")
 ```
 
 And, you are all set!
