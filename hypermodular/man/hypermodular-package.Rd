@@ -13,6 +13,13 @@ Hypermodules are cohesive groups of species emerging from congruent modules acro
 Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \url{https://doi.org/10.1098/rspb.2026.1348}
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/pinheirorbp/hypermodular_package.git}
+}
+
+}
 \author{
 \strong{Maintainer}: Rafael Pinheiro \email{rafael-bpp@hotmail.com}
 
