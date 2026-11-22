@@ -33,5 +33,5 @@ module congruence and with the proportion of interactions that occur within,
 rather than between, hypermodules.
 }
 \references{
-Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \url{https://doi.org/10.1098/rspb.2026.1348}
+Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 }

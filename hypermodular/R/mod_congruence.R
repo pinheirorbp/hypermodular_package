@@ -25,7 +25,7 @@
 #'  * `realized`: observed proportion of matching labels.
 #'  * `adjusted`: realized congruence minus baseline congruence.
 #'
-#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348.[https://doi.org/10.1098/rspb.2026.1348](https://doi.org/10.1098/rspb.2026.1348)
+#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 #'
 #' @examples
 #' hmod_ab <- c("hmod1", "hmod1", "hmod2", "hmod3", "hmod2", "hmod3")

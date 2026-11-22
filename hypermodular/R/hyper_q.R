@@ -19,7 +19,7 @@
 #'  * `hyper_q_ab`: component of hypermodularity for BN (A-B).
 #'  * `hyper_q_bc`: component of hypermodularity for BN (B-C).
 #'
-#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. [https://doi.org/10.1098/rspb.2026.1348](https://doi.org/10.1098/rspb.2026.1348)
+#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 #'
 #' @export
 hyper_q <- function(x,

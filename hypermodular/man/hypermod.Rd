@@ -58,5 +58,5 @@ Generates a \code{hypermod_results} object that can be used in the null model
 and plots of the \code{hypermodular} package.
 }
 \references{
-Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \url{https://doi.org/10.1098/rspb.2026.1348}
+Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 }
