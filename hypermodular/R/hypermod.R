@@ -33,7 +33,7 @@
 #'  * `trinet`: the same trinet object input.
 #'  * `parameters`: named list with the parameter applied in the analysis.
 #'
-#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. [https://doi.org/10.1098/rspb.2026.1348](https://doi.org/10.1098/rspb.2026.1348)
+#' @references Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 #'
 #' @export
 hypermod <- function(x,
@@ -142,7 +142,7 @@ hypermod <- function(x,
 
   out <- list(final = metrics[nrow(metrics), ],
               metrics = metrics,
-              hyper_q = hp,
+              hyper_q = hq,
               mod_corresp = current_corresp,
               trinet = x,
               parameters = list(lambda = lambda,

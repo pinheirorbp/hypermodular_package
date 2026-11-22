@@ -1,4 +1,4 @@
-# hypermodule: Tools for hypermodularity analysis in tripartite networks
+# hypermodular: Tools for Hypermodularity Analysis in Tripartite Networks
 
 Hypermodules are cohesive groups of species emerging from congruent modules across two interconnected bipartite networks. 
 
@@ -12,10 +12,10 @@ In your R console, install the `remotes` library from CRAN.
 install_packages("remotes")
 ```
 
-Then, install the `hypermodule` package.
+Then, install the `hypermodular` package.
 
 ```bash
-remotes::install_github("pinheirorbp/hypermodule_package/hypermodule")
+remotes::install_github("pinheirorbp/hypermodular_package/hypermodular")
 ```
 
 And, you are all set!

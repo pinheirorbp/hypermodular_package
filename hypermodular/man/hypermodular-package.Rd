@@ -4,19 +4,23 @@
 \name{hypermodular-package}
 \alias{hypermodular}
 \alias{hypermodular-package}
-\title{hypermodular: Tools for hypermodularity analysis in tripartite networks}
+\title{hypermodular: Tools for Hypermodularity Analysis in Tripartite Networks}
 \description{
 Hypermodules are cohesive groups of species emerging from congruent modules across two interconnected bipartite networks. This package implements the HyperMod algorithm to detect hypermodules and null models for comparisons. It also provides functions for plotting tripartite networks with highlighted hypermodules.
 }
 \section{References}{
 
-Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \url{https://doi.org/10.1098/rspb.2026.1348}
+Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348. \doi{10.1098/rspb.2026.1348}
 }
 
 \seealso{
 Useful links:
 \itemize{
+<<<<<<< HEAD
   \item \url{https://github.com/pinheirorbp/hypermodular_package.git}
+=======
+  \item \url{https://github.com/pinheirorbp/hypermodular_package}
+>>>>>>> origin/main
 }
 
 }
