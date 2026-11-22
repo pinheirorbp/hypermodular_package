@@ -1,4 +1,4 @@
-# hypermodular: Tools for hypermodularity analysis in tripartite networks
+# hypermodular: Tools for Hypermodularity Analysis in Tripartite Networks
 
 Hypermodules are cohesive groups of species emerging from congruent modules across two interconnected bipartite networks. 
 
