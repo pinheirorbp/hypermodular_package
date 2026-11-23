@@ -22,7 +22,7 @@
 #' @param report A Boolean that determines whether a report of the data will
 #'   be shown. Defaults to `TRUE`.
 #'
-#' @return A hypermod_results object, which is a named list containing:
+#' @return A `hypermod_results` object, which is a named list containing:
 #'  * `final`: final congruence values for baseline, realized and adjusted.
 #'  * `metrics`: a matrix that keeps track of all congruence values until the
 #'    algorithm ends.

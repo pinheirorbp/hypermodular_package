@@ -1,7 +1,7 @@
 #' Constructs an object of type "trinet"
 #'
 #' Combines two Bipartite Networks (A-B) and (B-C) matrices with their
-#' respective modules into a standardized `"trinet"` S3 object
+#' respective modules into a standardized `trinet` S3 object
 #' to be used by the other functions of the `hypermodular` package.
 #'
 #' Module labels can be of any type (they are converted to character and
@@ -29,7 +29,7 @@
 #' @param report A Boolean that determines whether a report of the data will
 #'   be shown. Defaults to `TRUE`.
 #'
-#' @return A trinet object, which is a named list containing:
+#' @return A `trinet` object, which is a named list containing:
 #'  * `bn_ab`: The input interaction matrix for network (A-B).
 #'  * `bn_bc`: The input interaction matrix for network (B-C).
 #'  * `mod_ab`: A list with components `rows` and `cols` holding standardized,
