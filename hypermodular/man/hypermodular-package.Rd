@@ -16,7 +16,11 @@ Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structur
 \seealso{
 Useful links:
 \itemize{
+<<<<<<< HEAD
+  \item \url{https://github.com/pinheirorbp/hypermodular_package.git}
+=======
   \item \url{https://github.com/pinheirorbp/hypermodular_package}
+>>>>>>> origin/main
 }
 
 }
