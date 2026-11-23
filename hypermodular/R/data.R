@@ -1,0 +1,475 @@
+# data.R -- unified documentation of the tripartite network data set.
+# Note: Rd/roxygen text below is UTF-8; DESCRIPTION should declare "Encoding: UTF-8".
+
+#' Bipartite Networks Datasets
+#'
+#' A concatenated collection of 40 empirical tripartite ecological networks
+#' ("A–B–C"), each represented by two bipartite interaction matrices:
+#' \code{dataset_NN_ab} (interactions between partition A and partition B) and
+#' \code{dataset_NN_bc} (interactions between partition B and partition C).
+#'
+#'
+#' @format A single object containing 40 paired bipartite interaction matrices
+#' (\code{dataset_01_ab} / \code{dataset_01_bc} through \code{dataset_40_ab} / \code{dataset_40_bc}) of class \code{matrix}/\code{array}:
+#'
+#' \describe{
+#'   \item{\code{dataset_01} (\code{dataset_01_ab}, \code{dataset_01_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Azores)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_01)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 31, \code{nB-AB} = 36, \code{nC} = 12, \code{nB-BC} = 13, \code{nBcon} = 13 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Heleno, R. H., R. S. Ceia, J. A. Ramos, and J. Memmott. 2009. Effects of alien plants on insect abundance and biomass: A food-web approach. Conservation Biology 23:410–419. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_02} (\code{dataset_02_ab}, \code{dataset_02_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Bristol)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_02)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 139, \code{nB-AB} = 357, \code{nC} = 192, \code{nB-BC} = 157, \code{nBcon} = 153 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Macfadyen, S., R. Gibson, A. Polaszek, R. J. Morris, P. G. Craze, R. Planqué, W. O. Symondson, and J. Memmott. 2009. Do differences in food web structure between organic and conventional farms affect the ecosystem service of pest control? Ecology Letters 12:229–238. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_03} (\code{dataset_03_ab}, \code{dataset_03_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (New Zealand)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_03)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 75, \code{nB-AB} = 90, \code{nC} = 60, \code{nB-BC} = 49, \code{nBcon} = 49 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Sources:}            \tab Frost, C. M., G. Peralta, T. A. Rand, R. K. Didham, A. Varsani, and J. M. Tylianakis. 2016. Apparent competition drives community-wide parasitism rates and changes in host abundance across ecosystem boundaries. Nature Communications 7:12644; Peralta, G., C. M. Frost, T. A. Rand, R. K. Didham, and J. M. Tylianakis. 2014. Complementarity and redundancy of interactions enhance attack rates and spatial stability in host–parasitoid food webs. Ecology 95:1888–1896; Peralta, G., C. M. Frost, R. K. Didham, and J. M. Tylianakis. 2026. Plant-herbivore-parasitoid food webs across an edge gradient from natural southern beech to plantation pine forests. Ecology (in press). \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_04} (\code{dataset_04_ab}, \code{dataset_04_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Córdoba (site 1))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_04)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 111, \code{nB-AB} = 131, \code{nC} = 232, \code{nB-BC} = 103, \code{nBcon} = 103 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Cagnolo, L., A. Salvo, and G. Valladares. 2011. Network topology: patterns and mechanisms in plant-herbivore and host-parasitoid food webs. Journal of Animal Ecology 80:342–351. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_05} (\code{dataset_05_ab}, \code{dataset_05_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Córdoba (site 2))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_05)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 109, \code{nB-AB} = 85, \code{nC} = 27, \code{nB-BC} = 27, \code{nBcon} = 26 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Tavella, J., and L. Cagnolo. 2017. Disturbios ambientales como moduladores de la estructura espacial y topología de redes de interacciones mirmecófilas. PhD Thesis, Universidad Nacional de Córdoba. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_06} (\code{dataset_06_ab}, \code{dataset_06_bc})}{
+#'     \strong{Defender–Plant–Herbivore} (Córdoba (site 2))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_06)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Defender–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Herbivore \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 33, \code{nB-AB} = 16, \code{nC} = 85, \code{nB-BC} = 109, \code{nBcon} = 10 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Tavella, J., and L. Cagnolo. 2017. Disturbios ambientales como moduladores de la estructura espacial y topología de redes de interacciones mirmecófilas. PhD Thesis, Universidad Nacional de Córdoba. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_07} (\code{dataset_07_ab}, \code{dataset_07_bc})}{
+#'     \strong{Plant–Herbivore–Predator} (Córdoba (site 2))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_07)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Predator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 109, \code{nB-AB} = 85, \code{nC} = 23, \code{nB-BC} = 33, \code{nBcon} = 33 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Tavella, J., and L. Cagnolo. 2017. Disturbios ambientales como moduladores de la estructura espacial y topología de redes de interacciones mirmecófilas. PhD Thesis, Universidad Nacional de Córdoba. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_08} (\code{dataset_08_ab}, \code{dataset_08_bc})}{
+#'     \strong{Plant–Herbivore–Defender} (Córdoba (site 2))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_08)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Defender \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 109, \code{nB-AB} = 85, \code{nC} = 26, \code{nB-BC} = 36, \code{nBcon} = 36 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Tavella, J., and L. Cagnolo. 2017. Disturbios ambientales como moduladores de la estructura espacial y topología de redes de interacciones mirmecófilas. PhD Thesis, Universidad Nacional de Córdoba. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_09} (\code{dataset_09_ab}, \code{dataset_09_bc})}{
+#'     \strong{Defender–Herbivore–Enemy} (Córdoba (site 2))
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_09)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Defender–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Enemy \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 26, \code{nB-AB} = 37, \code{nC} = 50, \code{nB-BC} = 40, \code{nBcon} = 25 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Tavella, J., and L. Cagnolo. 2017. Disturbios ambientales como moduladores de la estructura espacial y topología de redes de interacciones mirmecófilas. PhD Thesis, Universidad Nacional de Córdoba. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_10} (\code{dataset_10_ab}, \code{dataset_10_bc})}{
+#'     \strong{Herbivore–Plant–Pollinator} (Hackett et al. (2019), HH)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_10)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Herbivore–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 39, \code{nB-AB} = 15, \code{nC} = 220, \code{nB-BC} = 43, \code{nBcon} = 7 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Hackett, T. D., A. M. C. Sauve, N. Davies, D. Montoya, J. M. Tylianakis, and J. Memmott. 2019. Reshaping our understanding of species’ roles in landscape-scale networks. Ecology Letters 22:1367–1377. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_11} (\code{dataset_11_ab}, \code{dataset_11_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Hackett et al. (2019), HH)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_11)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 15, \code{nB-AB} = 39, \code{nC} = 17, \code{nB-BC} = 14, \code{nBcon} = 14 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Hackett, T. D., A. M. C. Sauve, N. Davies, D. Montoya, J. M. Tylianakis, and J. Memmott. 2019. Reshaping our understanding of species’ roles in landscape-scale networks. Ecology Letters 22:1367–1377. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_12} (\code{dataset_12_ab}, \code{dataset_12_bc})}{
+#'     \strong{Herbivore–Plant–Pollinator} (Shinohara et al. (2019) sites)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_12)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Herbivore–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 93, \code{nB-AB} = 58, \code{nC} = 52, \code{nB-BC} = 48, \code{nBcon} = 20 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Shinohara, N., K. Uchida, and T. Yoshida. 2019. Contrasting effects of land-use changes on herbivory and pollination networks. Ecology and Evolution 9:13585–13595. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_13} (\code{dataset_13_ab}, \code{dataset_13_bc})}{
+#'     \strong{Plant–Seed disperser–Parasite} (Azores)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_13)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Seed disperser \cr
+#'                                    \tab \code{_bc}: Seed disperser–Parasite \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 41, \code{nB-AB} = 7, \code{nC} = 13, \code{nB-BC} = 9, \code{nBcon} = 7 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Heleno, R. H., J. A. Ramos, and J. Memmott. 2013. Integration of exotic seeds into an Azorean seed dispersal network. Biological Invasions 15:1143–1154. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_14} (\code{dataset_14_ab}, \code{dataset_14_bc})}{
+#'     \strong{Herbivore–Plant–Seed disperser} (Azores)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_14)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Herbivore–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Seed disperser \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 36, \code{nB-AB} = 31, \code{nC} = 7, \code{nB-BC} = 41, \code{nBcon} = 21 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Heleno, R., I. Lacerda, J. A. Ramos, and J. Memmott. 2010. Evaluation of restoration effectiveness: Community response to the removal of alien plants. Ecological Applications 20:1191–1203. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_15} (\code{dataset_15_ab}, \code{dataset_15_bc})}{
+#'     \strong{Seed disperser–Plant–Pollinator} (Galapagos)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_15)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Seed disperser–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 21, \code{nB-AB} = 84, \code{nC} = 212, \code{nB-BC} = 110, \code{nBcon} = 37 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 2 \cr
+#'       \strong{Sources:}            \tab Heleno, R., J. M. Olesen, M. Nogales, P. Vargas, and A. Traveset. 2012. Seed dispersal networks in the Galapagos and the consequences of alien plant invasions. Proceedings of the Royal Society B: Biological Sciences 280:20122112; Traveset, A., J. M. Olesen, M. Nogales, P. Vargas, P. Jaramillo, E. Antolín, M. M. Trigo, and R. Heleno. 2015. Bird–flower visitation networks in the Galápagos unveil a widespread interaction release. Nature Communications 6:6376. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_16} (\code{dataset_16_ab}, \code{dataset_16_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Purbeck)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_16)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 11, \code{nB-AB} = 25, \code{nC} = 15, \code{nB-BC} = 11, \code{nBcon} = 11 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Carvalheiro, L. G., Y. M. Buckley, and J. Memmott. 2010. Diet breadth influences how the impact of invasive plants is propagated through food webs. Ecology 91:1063–1074. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_17} (\code{dataset_17_ab}, \code{dataset_17_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Norwood)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_17)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 6, \code{nB-AB} = 19, \code{nC} = 17, \code{nB-BC} = 17, \code{nBcon} = 17 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 2 \cr
+#'       \strong{Sources:}            \tab Pocock, M. J. O., D. M. Evans, and J. Memmott. 2010. The impact of farm management on species-specific leaf area index (LAI): Farm-scale data and predictive models. Agriculture, Ecosystems and Environment 135:279–287; Pocock, M. J. O., D. M. Evans, and J. Memmott. 2012. The robustness and restoration of a network of ecological networks. Science 335:973–977. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_18} (\code{dataset_18_ab}, \code{dataset_18_bc})}{
+#'     \strong{Herbivore–Plant–Pollinator} (Norwood)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_18)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Herbivore–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 28, \code{nB-AB} = 30, \code{nC} = 241, \code{nB-BC} = 47, \code{nBcon} = 15 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 2 \cr
+#'       \strong{Sources:}            \tab Pocock, M. J. O., D. M. Evans, and J. Memmott. 2010. The impact of farm management on species-specific leaf area index (LAI): Farm-scale data and predictive models. Agriculture, Ecosystems and Environment 135:279–287; Pocock, M. J. O., D. M. Evans, and J. Memmott. 2012. The robustness and restoration of a network of ecological networks. Science 335:973–977. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_19} (\code{dataset_19_ab}, \code{dataset_19_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Norwood)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_19)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 30, \code{nB-AB} = 28, \code{nC} = 11, \code{nB-BC} = 9, \code{nBcon} = 9 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 2 \cr
+#'       \strong{Sources:}            \tab Pocock, M. J. O., D. M. Evans, and J. Memmott. 2010. The impact of farm management on species-specific leaf area index (LAI): Farm-scale data and predictive models. Agriculture, Ecosystems and Environment 135:279–287; Pocock, M. J. O., D. M. Evans, and J. Memmott. 2012. The robustness and restoration of a network of ecological networks. Science 335:973–977. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_20} (\code{dataset_20_ab}, \code{dataset_20_bc})}{
+#'     \strong{Plant–Herbivore–Defender} (Borneo)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_20)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Defender \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 32, \code{nB-AB} = 13, \code{nC} = 43, \code{nB-BC} = 13, \code{nBcon} = 12 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Blüthgen, N., D. Mezger, and K. E. Linsenmair. 2006. Ant-hemipteran trophobioses in a Bornean rainforest—Diversity, specificity and monopolisation. Insectes Sociaux 53:194–203. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_21} (\code{dataset_21_ab}, \code{dataset_21_bc})}{
+#'     \strong{Plant–Seed disperser–Parasite} (Coimbra)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_21)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Seed disperser \cr
+#'                                    \tab \code{_bc}: Seed disperser–Parasite \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 29, \code{nB-AB} = 15, \code{nC} = 6, \code{nB-BC} = 18, \code{nBcon} = 8 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Norte, A. C., I. L. de Carvalho, J. A. Ramos, M. Gonçalves, L. Gern, and M. S. Núncio. 2012. Diversity and seasonal patterns of ticks parasitizing wild birds in western Portugal. Experimental and Applied Acarology 58:327–339. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_22} (\code{dataset_22_ab}, \code{dataset_22_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Beira)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_22)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 22, \code{nB-AB} = 31, \code{nC} = 40, \code{nB-BC} = 18, \code{nBcon} = 18 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 1 \cr
+#'       \strong{Source:}             \tab López-Núñez, F. A., R. H. Heleno, S. Ribeiro, H. Marchante, and E. Marchante. 2017. Four-trophic level food webs reveal the cascading impacts of an invasive plant targeted for biocontrol. Ecology 98:782–793. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_23} (\code{dataset_23_ab}, \code{dataset_23_bc})}{
+#'     \strong{Plant–Pollinator–Parasitoid} (Dorset)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_23)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Pollinator \cr
+#'                                    \tab \code{_bc}: Pollinator–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 4, \code{nB-AB} = 9, \code{nC} = 11, \code{nB-BC} = 9, \code{nBcon} = 9 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Henson, K. S. E., P. G. Craze, and J. Memmott. 2009. The restoration of parasites, parasitoids, and pathogens to heathland communities. Ecology 90:1840–1851. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_24} (\code{dataset_24_ab}, \code{dataset_24_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Hawaii)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_24)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 32, \code{nB-AB} = 28, \code{nC} = 7, \code{nB-BC} = 13, \code{nBcon} = 13 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Henneman, M. L., and J. Memmott. 2001. Infiltration of a Hawaiian community by introduced biological control agents. Science 293:1314–1316. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_25} (\code{dataset_25_ab}, \code{dataset_25_bc})}{
+#'     \strong{Seed disperser–Plant–Pollinator} (Poland)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_25)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Seed disperser–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 34, \code{nB-AB} = 15, \code{nC} = 308, \code{nB-BC} = 15, \code{nBcon} = 15 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 3 \cr
+#'       \strong{Source:}             \tab Albrecht, J., D. Gertrud Berens, B. Jaroszewicz, N. Selva, R. Brandl, and N. Farwig. 2014. Correlated loss of ecosystem services in coupled mutualistic networks. Nature Communications 5:3810. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_26} (\code{dataset_26_ab}, \code{dataset_26_bc})}{
+#'     \strong{Plant–Seed disperser–Parasite} (Galapagos)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_26)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Seed disperser \cr
+#'                                    \tab \code{_bc}: Seed disperser–Parasite \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 46, \code{nB-AB} = 16, \code{nC} = 13, \code{nB-BC} = 15, \code{nBcon} = 14 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Heleno, R., J. M. Olesen, M. Nogales, P. Vargas, and A. Traveset. 2012. Seed dispersal networks in the Galapagos and the consequences of alien plant invasions. Proceedings of the Royal Society B: Biological Sciences 280:20122112. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_27} (\code{dataset_27_ab}, \code{dataset_27_bc})}{
+#'     \strong{Mycorrhiza–Plant–Seed disperser} (Mozambique)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_27)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Mycorrhiza–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Seed disperser \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 55, \code{nB-AB} = 16, \code{nC} = 16, \code{nB-BC} = 16, \code{nBcon} = 10 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: \code{tr} = 3 \cr
+#'       \strong{Source:}             \tab Correia, M., S. Rodríguez-Echeverría, S. Timóteo, H. Freitas, and R. Heleno. 2019. Integrating plant species contribution to mycorrhizal and seed dispersal mutualistic networks. Biology Letters 15:20180770. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_28} (\code{dataset_28_ab}, \code{dataset_28_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Costa Rica)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_28)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 37, \code{nB-AB} = 58, \code{nC} = 102, \code{nB-BC} = 58, \code{nBcon} = 58 \cr
+#'       \strong{Data details:}       \tab Binary (\code{dt} = B); transformation: none \cr
+#'       \strong{Source:}             \tab Memmott, J., H. J. C. Godfray, and I. D. Gauld. 1994. The structure of a tropical host-parasitoid community. Journal of Animal Ecology 63:521–540. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_29} (\code{dataset_29_ab}, \code{dataset_29_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Müller (1999) community)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_29)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 21, \code{nB-AB} = 14, \code{nC} = 18, \code{nB-BC} = 14, \code{nBcon} = 14 \cr
+#'       \strong{Data details:}       \tab Binary (\code{dt} = B); transformation: none \cr
+#'       \strong{Source:}             \tab Müller, C. B., I. C. T. Adriaanse, R. Belshaw, and H. J. C. Godfray. 1999. The structure of an aphid-parasitoid community. Journal of Animal Ecology 68:346–370. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_30} (\code{dataset_30_ab}, \code{dataset_30_bc})}{
+#'     \strong{Plant–Herbivore–Predator} (Serengeti)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_30)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Predator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 129, \code{nB-AB} = 23, \code{nC} = 9, \code{nB-BC} = 22, \code{nBcon} = 21 \cr
+#'       \strong{Data details:}       \tab Binary (\code{dt} = B); transformation: none \cr
+#'       \strong{Source:}             \tab Baskerville, E. B., A. P. Dobson, T. Bedford, S. Allesina, T. M. Anderson, and M. Pascual. 2011. Spatial guilds in the Serengeti food web revealed by a Bayesian group model. PLoS Computational Biology 7:e1002321. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_31} (\code{dataset_31_ab}, \code{dataset_31_bc})}{
+#'     \strong{Defender–Plant–Pollinator} (Dáttilo et al. (2016) sites)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_31)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Defender–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Pollinator \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 30, \code{nB-AB} = 40, \code{nC} = 173, \code{nB-BC} = 93, \code{nBcon} = 13 \cr
+#'       \strong{Data details:}       \tab Binary (\code{dt} = B); transformation: none \cr
+#'       \strong{Source:}             \tab Dáttilo, W., N. Lara-Rodríguez, P. Jordano, P. R. Guimarães, J. N. Thompson, R. J. Marquis, L. P. Medeiros, R. Ortiz-Pulido, M. A. Marcos-García, and V. Rico-Gray. 2016. Unraveling Darwin’s entangled bank: architecture and robustness of mutualistic networks with multiple interaction types. Proceedings of the Royal Society B: Biological Sciences 283:20161564. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_32} (\code{dataset_32_ab}, \code{dataset_32_bc})}{
+#'     \strong{Plant–Herbivore–Defender} (Great Smoky Mountains)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_32)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Defender \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 120, \code{nB-AB} = 97, \code{nC} = 10, \code{nB-BC} = 19, \code{nBcon} = 12 \cr
+#'       \strong{Data details:}       \tab Binary (\code{dt} = B); transformation: none \cr
+#'       \strong{Source:}             \tab Favret, C., J. J. Duggan, N. J. Sanders, and R. L. Phillippe. 2010. Actual and inferred checklist of the aphids (Hemiptera: Aphididae) of the Great Smoky Mountains National Park, with attendant ant and host plant associations. Proceedings of the Entomological Society of Washington 112:381–403. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_33} (\code{dataset_33_ab}, \code{dataset_33_bc})}{
+#'     \strong{Pollinator–Plant–Seed disperser} (Vitali et al. (2022) sites)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_33)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Pollinator–Plant \cr
+#'                                    \tab \code{_bc}: Plant–Seed disperser \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 95, \code{nB-AB} = 34, \code{nC} = 4, \code{nB-BC} = 10, \code{nBcon} = 8 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Vitali, A., Y. Sasal, D. P. Vázquez, M. F. Miguel, and M. A. Rodríguez-Cabal. 2022. The disruption of a keystone interaction erodes pollination and seed dispersal networks. Ecology 103:e03547. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_34} (\code{dataset_34_ab}, \code{dataset_34_bc})}{
+#'     \strong{Plant–Herbivore–Defender} (Zhang et al. (2023) sites)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_34)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Defender \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 41, \code{nB-AB} = 24, \code{nC} = 35, \code{nB-BC} = 20, \code{nBcon} = 20 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Zhang, X., B. Dalsgaard, M. Staab, C. Zhu, Y. Zhao, F. Gonçalves, P. Ren, C. Cai, G. Qiao, P. Ding, and S. Xingfeng. 2023. Habitat fragmentation increases the specialization of multi-trophic interactions by high species turnover. Proceedings of the Royal Society B 290:20231372. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_35} (\code{dataset_35_ab}, \code{dataset_35_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Araujo & Maia (2021) restinga)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_35)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 44, \code{nB-AB} = 80, \code{nC} = 68, \code{nB-BC} = 59, \code{nBcon} = 59 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Araujo, W., and V. Maia. 2021. Topological structure of a tritrophic network composed of host plants, gall-inducing insects and parasitoids in a restinga area in Brazil. Entomological Science 24:201–216. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_36} (\code{dataset_36_ab}, \code{dataset_36_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Basset et al. (2021), BCI)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_36)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 157, \code{nB-AB} = 214, \code{nC} = 30, \code{nB-BC} = 19, \code{nBcon} = 19 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Basset, Y., L. R. Jorge, P. T. Butterill, G. P. A. Lamarre, C. Dahl, R. Ctvrtecka, S. Gripenberg, O. T. Lewis, H. Barrios, J. W. Brown, S. Bunyavejchewin, B. A. Butcher, A. I. Cognato, S. J. Davies, O. Kaman, P. Klimes, M. Knížek, S. E. Miller, G. E. Morse, V. Novotny, N. Pongpattananurak, P. Pramual, D. L. J. Quicke, W. Sakchoowong, R. Umari, E. J. Vesterinen, G. Weiblen, S. J. Wright, and S. T. Segar. 2021. Host specificity and interaction networks of insects feeding on seeds and fruits in tropical rainforests. Oikos 130:1462–1476. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_37} (\code{dataset_37_ab}, \code{dataset_37_bc})}{
+#'     \strong{Plant–Seed predator–Parasitoid} (Basset et al. (2021), BCI)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_37)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Seed predator \cr
+#'                                    \tab \code{_bc}: Seed predator–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 181, \code{nB-AB} = 311, \code{nC} = 53, \code{nB-BC} = 28, \code{nBcon} = 28 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Basset, Y., L. R. Jorge, P. T. Butterill, G. P. A. Lamarre, C. Dahl, R. Ctvrtecka, S. Gripenberg, O. T. Lewis, H. Barrios, J. W. Brown, S. Bunyavejchewin, B. A. Butcher, A. I. Cognato, S. J. Davies, O. Kaman, P. Klimes, M. Knížek, S. E. Miller, G. E. Morse, V. Novotny, N. Pongpattananurak, P. Pramual, D. L. J. Quicke, W. Sakchoowong, R. Umari, E. J. Vesterinen, G. Weiblen, S. J. Wright, and S. T. Segar. 2021. Host specificity and interaction networks of insects feeding on seeds and fruits in tropical rainforests. Oikos 130:1462–1476. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_38} (\code{dataset_38_ab}, \code{dataset_38_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Basset et al. (2021), KHC)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_38)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 170, \code{nB-AB} = 161, \code{nC} = 24, \code{nB-BC} = 12, \code{nBcon} = 12 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Basset, Y., L. R. Jorge, P. T. Butterill, G. P. A. Lamarre, C. Dahl, R. Ctvrtecka, S. Gripenberg, O. T. Lewis, H. Barrios, J. W. Brown, S. Bunyavejchewin, B. A. Butcher, A. I. Cognato, S. J. Davies, O. Kaman, P. Klimes, M. Knížek, S. E. Miller, G. E. Morse, V. Novotny, N. Pongpattananurak, P. Pramual, D. L. J. Quicke, W. Sakchoowong, R. Umari, E. J. Vesterinen, G. Weiblen, S. J. Wright, and S. T. Segar. 2021. Host specificity and interaction networks of insects feeding on seeds and fruits in tropical rainforests. Oikos 130:1462–1476. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_39} (\code{dataset_39_ab}, \code{dataset_39_bc})}{
+#'     \strong{Plant–Herbivore–Parasitoid} (Basset et al. (2021), WAN)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_39)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Herbivore \cr
+#'                                    \tab \code{_bc}: Herbivore–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 184, \code{nB-AB} = 193, \code{nC} = 51, \code{nB-BC} = 38, \code{nBcon} = 37 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Basset, Y., L. R. Jorge, P. T. Butterill, G. P. A. Lamarre, C. Dahl, R. Ctvrtecka, S. Gripenberg, O. T. Lewis, H. Barrios, J. W. Brown, S. Bunyavejchewin, B. A. Butcher, A. I. Cognato, S. J. Davies, O. Kaman, P. Klimes, M. Knížek, S. E. Miller, G. E. Morse, V. Novotny, N. Pongpattananurak, P. Pramual, D. L. J. Quicke, W. Sakchoowong, R. Umari, E. J. Vesterinen, G. Weiblen, S. J. Wright, and S. T. Segar. 2021. Host specificity and interaction networks of insects feeding on seeds and fruits in tropical rainforests. Oikos 130:1462–1476. \cr
+#'     }
+#'   }
+#'   \item{\code{dataset_40} (\code{dataset_40_ab}, \code{dataset_40_bc})}{
+#'     \strong{Plant–Seed predator–Parasitoid} (Basset et al. (2021), WAN)
+#'     \tabular{ll}{
+#'       \strong{Usage:}              \tab \code{data(dataset_40)} \cr
+#'       \strong{Bipartite Networks:} \tab \code{_ab}: Plant–Seed predator \cr
+#'                                    \tab \code{_bc}: Seed predator–Parasitoid \cr
+#'       \strong{Metrics:}            \tab \code{nA} = 132, \code{nB-AB} = 77, \code{nC} = 8, \code{nB-BC} = 12, \code{nBcon} = 12 \cr
+#'       \strong{Data details:}       \tab Weighted (\code{dt} = W); transformation: none \cr
+#'       \strong{Source:}             \tab Basset, Y., L. R. Jorge, P. T. Butterill, G. P. A. Lamarre, C. Dahl, R. Ctvrtecka, S. Gripenberg, O. T. Lewis, H. Barrios, J. W. Brown, S. Bunyavejchewin, B. A. Butcher, A. I. Cognato, S. J. Davies, O. Kaman, P. Klimes, M. Knížek, S. E. Miller, G. E. Morse, V. Novotny, N. Pongpattananurak, P. Pramual, D. L. J. Quicke, W. Sakchoowong, R. Umari, E. J. Vesterinen, G. Weiblen, S. J. Wright, and S. T. Segar. 2021. Host specificity and interaction networks of insects feeding on seeds and fruits in tropical rainforests. Oikos 130:1462–1476. \cr
+#'     }
+#'   }
+#' }
+#'
+#' @details
+#' For each tripartite network \code{NN} (\code{01}–\code{40}), \code{dataset_NN_ab}
+#' holds the A–B bipartite interaction matrix and \code{dataset_NN_bc} holds the
+#' B–C bipartite interaction matrix. Summary columns derive from Tables S1 and S2 from Supplementary Material of Pinheiro RBP, Peralta G, Lewinsohn TM, Cagnolo L. 2026 The hypermodular structure of tripartite ecological networks. Proc. R. Soc. B 293 : 20261348 \doi{10.1098/rspb.2026.1348}.
+#' indicate:
+#' \itemize{
+#'   \item \code{nA}: Number of nodes in partition A.
+#'   \item \code{nBcon}: Number of connected nodes in the shared middle partition B.
+#'   \item \code{nC}: Number of nodes in partition C.
+#'   \item \code{nB-AB}, \code{nB-BC}: Number of nodes in partition B within the A–B and B–C networks, respectively.
+#'   \item \code{dt}: Data type (\code{W} = weighted/quantitative, \code{B} = binary/qualitative).
+#'   \item \code{tr}: Transformation code where applicable (\code{1} for rounded to whole numbers, \code{2} for log transformed and rounded, \code{3} for rescaled and rounded).
+#' }
+#' @name hypermodular_datasets
+#' @keywords data
+#' @docType data
+#' @aliases dataset_01_ab dataset_01_bc dataset_02_ab dataset_02_bc dataset_03_ab dataset_03_bc dataset_04_ab dataset_04_bc dataset_05_ab dataset_05_bc dataset_06_ab dataset_06_bc dataset_07_ab dataset_07_bc dataset_08_ab dataset_08_bc dataset_09_ab dataset_09_bc dataset_10_ab dataset_10_bc dataset_11_ab dataset_11_bc dataset_12_ab dataset_12_bc dataset_13_ab dataset_13_bc dataset_14_ab dataset_14_bc dataset_15_ab dataset_15_bc dataset_16_ab dataset_16_bc dataset_17_ab dataset_17_bc dataset_18_ab dataset_18_bc dataset_19_ab dataset_19_bc dataset_20_ab dataset_20_bc dataset_21_ab dataset_21_bc dataset_22_ab dataset_22_bc dataset_23_ab dataset_23_bc dataset_24_ab dataset_24_bc dataset_25_ab dataset_25_bc dataset_26_ab dataset_26_bc dataset_27_ab dataset_27_bc dataset_28_ab dataset_28_bc dataset_29_ab dataset_29_bc dataset_30_ab dataset_30_bc dataset_31_ab dataset_31_bc dataset_32_ab dataset_32_bc dataset_33_ab dataset_33_bc dataset_34_ab dataset_34_bc dataset_35_ab dataset_35_bc dataset_36_ab dataset_36_bc dataset_37_ab dataset_37_bc dataset_38_ab dataset_38_bc dataset_39_ab dataset_39_bc dataset_40_ab dataset_40_bc
+NULL
