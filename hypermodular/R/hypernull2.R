@@ -11,7 +11,7 @@
 #' @param n_cores Number of cores used in parallel computing
 #'  (using doSNOW package).
 #'
-#' @return A named list containing:
+#' @return A `hypernull` object, which is a named list containing:
 #'  * `baseline`: a vector with baseline congruence values for each
 #'    randomization.
 #'  * `realized`: a vector with realized congruence values for each
@@ -75,7 +75,9 @@ hypernull2 <- function(x,
           "------------------ \n",
           "p-value for adjusted congruence: ", mean(x$final[3] < adjusted), "\n")
 
-  list(baseline = baseline,
-       realized = realized,
-       adjusted = adjusted)
+  out <- list(baseline = baseline,
+              realized = realized,
+              adjusted = adjusted)
+  class(out) <- "hypernull"
+  out
 }
