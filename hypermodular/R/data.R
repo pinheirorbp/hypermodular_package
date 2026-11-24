@@ -1,12 +1,12 @@
 # data.R -- unified documentation of the tripartite network data set.
 # Note: Rd/roxygen text below is UTF-8; DESCRIPTION should declare "Encoding: UTF-8".
 
-#' Bipartite Networks Datasets
+#' Tripartite Datasets
 #'
 #' A concatenated collection of 40 empirical tripartite ecological networks
 #' ("A–B–C"), each represented by two bipartite interaction matrices:
-#' \code{dataset_NN_ab} (interactions between partition A and partition B) and
-#' \code{dataset_NN_bc} (interactions between partition B and partition C).
+#' \code{dataset_NN_ab} (interactions between node sets A and B) and
+#' \code{dataset_NN_bc} (interactions between node set B and C).
 #'
 #'
 #' @format A single object containing 40 paired bipartite interaction matrices
